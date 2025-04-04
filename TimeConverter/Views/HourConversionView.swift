@@ -18,12 +18,21 @@ struct HourConversionView: View {
         TextField("Enter the number of hours", text: $viewModel.providedHours)
         
         //OUTPUT
-        Text("\(viewModel.conversionResult?.timeInHours)")
         
-        Text("\(viewModel.conversionResult?.timeInMinutes)")
-       
-        Text("\(viewModel.conversionResult?.timeInSeconds)")
-       
+        // We will unwrap the optional convertionResult if possible and show result
+        if let conversionResult = viewModel.conversionResult{
+            Text("\(conversionResult.timeInHours)")
+           
+            Text("\(conversionResult.timeInMinutes)")
+           
+            Text("\(conversionResult.timeInSeconds)")
+           
+        } else {
+            
+            ContentUnavailableView("Unable to preform convertion", systemImage: "gear.badge.questionmark", description: Text(viewModel.recoverySuggestion))
+        }
+        
+     
     }
 }
 
