@@ -45,7 +45,17 @@ struct HourConversionView: View {
                  TextField("Enter the number of hours", text: $viewModel.providedHours)
                      .textFieldStyle(.roundedBorder)
                 
+                HStack {
+                    Text("History")
+                        .bold()
+                        .font(.title3)
+                    
+                    Spacer()
+                }
+                
+                
             }
+            .padding()
             .navigationTitle("Time Convertion")
         }
 
