@@ -10,11 +10,20 @@ import SwiftUI
 struct HourConversionView: View {
     
     //MARK: Stored Properties
-    
+    @State var viewModel = HourConversionViewModel()
     
     //MARK: Computed properties
     var body: some View {
-        Text("Will show convertions soon")
+       //IMPUT
+        TextField("Enter the number of hours", text: $viewModel.providedHours)
+        
+        //OUTPUT
+        Text("\(viewModel.conversionResult?.timeInHours)")
+        
+        Text("\(viewModel.conversionResult?.timeInMinutes)")
+       
+        Text("\(viewModel.conversionResult?.timeInSeconds)")
+       
     }
 }
 
