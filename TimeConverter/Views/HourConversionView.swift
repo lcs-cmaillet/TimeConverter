@@ -24,11 +24,11 @@ struct HourConversionView: View {
                 if let conversionResult = viewModel.conversionResult{
                     
                     VStack {
-                        Text("\(conversionResult.timeInHours)")
+                        Text("\(conversionResult.timeInHours.formatted())")
                        
-                        Text("\(conversionResult.timeInMinutes)")
+                        Text("\(conversionResult.timeInMinutes.formatted())")
                        
-                        Text("\(conversionResult.timeInSeconds)")
+                        Text("\(conversionResult.timeInSeconds.formatted())")
                     }
                     .frame(height:200)
                     
