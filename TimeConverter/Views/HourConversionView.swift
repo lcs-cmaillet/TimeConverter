@@ -34,6 +34,13 @@ struct HourConversionView: View {
                     .font(.title3)
                     .frame(height:200)
                     
+                    Button {
+                        viewModel.saveResult()
+                    } label: {
+                        Text("Save")
+                    }
+                    .buttonStyle(.borderedProminent)
+                    
                     
                    
                 } else {

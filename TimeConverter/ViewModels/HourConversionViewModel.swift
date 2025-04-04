@@ -57,6 +57,8 @@ class HourConversionViewModel {
             self.resultHistory.insert(conversionResult, at: 0)
             
         }
+       
+        print("There are \(self.resultHistory.count) elements in the array.")
         
     }
     
