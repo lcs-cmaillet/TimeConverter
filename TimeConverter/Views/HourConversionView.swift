@@ -62,7 +62,20 @@ struct HourConversionView: View {
                     Spacer()
                 }
                 
-                
+                List(viewModel.resultHistory) { priorConversion in
+                    
+                    VStack(alignment: .leading) {
+                        Text("\(priorConversion.timeInHours.formatted()) hours")
+                        HStack {
+                            Text("= \(priorConversion.timeInMinutes.formatted()) minutes,")
+                           
+                            Text("\(priorConversion.timeInSeconds.formatted()) secounds")
+                        }
+                    }
+                    .font(.title3)
+                    
+                }
+                .listStyle(.plain)
             }
             .padding()
             .navigationTitle("Time Convertion")
