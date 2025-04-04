@@ -23,13 +23,15 @@ struct HourConversionView: View {
                 // We will unwrap the optional convertionResult if possible and show result
                 if let conversionResult = viewModel.conversionResult{
                     
-                    VStack {
-                        Text("\(conversionResult.timeInHours.formatted())")
-                       
-                        Text("\(conversionResult.timeInMinutes.formatted())")
-                       
-                        Text("\(conversionResult.timeInSeconds.formatted())")
+                    VStack(alignment: .leading) {
+                        Text("\(conversionResult.timeInHours.formatted()) hours")
+                        HStack {
+                            Text("= \(conversionResult.timeInMinutes.formatted()) minutes,")
+                           
+                            Text("\(conversionResult.timeInSeconds.formatted()) secounds")
+                        }
                     }
+                    .font(.title3)
                     .frame(height:200)
                     
                     
